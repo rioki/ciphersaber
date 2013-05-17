@@ -18,7 +18,10 @@ ciphersaber$(EXEEXT): $(patsubst %.c, %.o, $(src))
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
 
 clean:
-	rm *.o *.d ciphersaber$(EXEEXT)
+	rm -f *.o *.d ciphersaber$(EXEEXT)
+	
+%.o : %.c
+	$(CC) $(CFLAGS) -MD -c $< -o $(patsubst %.c, %.o, $<)
 
 ifneq "$(MAKECMDGOALS)" "clean"
 -include  $(patsubst %.c, %.d, $(src))

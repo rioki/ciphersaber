@@ -11,4 +11,9 @@ function, initialized with time. The RC4 cipher is not considered safe anymore.
 
 You can do with code whatever you like, see COPYING.txt for details.
 
+Special thanks to [gnibbler][2] and [CodesInChaos][3] for pointing out the flaws 
+int the code.
+
 [1]: http://ciphersaber.gurus.org/
+[2]: https://stackoverflow.com/users/174728/gnibbler
+[3]: https://stackoverflow.com/users/445517/codesinchaos

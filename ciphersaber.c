@@ -13,11 +13,13 @@ enum Mode
 void print_usage()
 {
     printf("Usage: \n"
-           "  cyphersaber [mode] [key]\n"
+           "  cyphersaber [mode] [key] [input file] [output file]\n"
            "\n"
            "Options: \n"
            "  mode: encrypt / decrypt\n"
-           "  key: encryption key, may be up to 245 chars long");
+           "  key: encryption key, may be up to 245 chars long\n"
+           "  input file: the input to read\n"
+           "  output file: the input to write");
 }
  
 int main(int argc, char* argv[])
@@ -116,6 +118,7 @@ int main(int argc, char* argv[])
     while (c != EOF)
     {
         rc4_byte r = rc4(&state, (rc4_byte)c);
+        
         fputc(r, out);
         
         c = fgetc(in);

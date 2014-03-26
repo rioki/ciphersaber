@@ -18,7 +18,7 @@ void rc4_init(rc4_state* state, rc4_byte* key, size_t keylen)
         state->state[i] = i;
         i++;
     }    
-    while (i != 255);
+    while (i);
     
     j = 0;
     i = 0;
@@ -29,7 +29,7 @@ void rc4_init(rc4_state* state, rc4_byte* key, size_t keylen)
         swap(&state->state[i], &state->state[j]);
         i++;
     }    
-    while (i != 255);
+    while (i);
     
     state->i = 0;
     state->j = 0;
